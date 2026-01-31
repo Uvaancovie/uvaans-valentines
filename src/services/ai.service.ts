@@ -14,16 +14,16 @@ export class AiService {
 
   async generateLoveNote(partnerName: string): Promise<string> {
     try {
-      const model = this.genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
       const prompt = `Write a very short, witty, and incredibly cute romantic poem (maximum 4 lines) specifically for Esha from Uvaan Covenden. 
       Mention their names (Esha and Uvaan) in the poem.
       Make it funny, charming, and sweet. Use emojis.`;
       
-      const response = await model.generateContent({
-        contents: [{ role: 'user', parts: [{ text: prompt }] }]
+      const response = await this.genAI.models.generateContent({
+        model: 'gemini-2.0-flash',
+        contents: prompt
       });
       
-      return response.response.text() || "Roses are red, violets are blue, Uvaan is lucky to have Esha like you! 💖";
+      return response.text || "Roses are red, violets are blue, Uvaan is lucky to have Esha like you! 💖";
     } catch (e) {
       console.error('AI Error', e);
       return "Esha + Uvaan = 💖 (AI is taking a nap, but the love is real!)";
