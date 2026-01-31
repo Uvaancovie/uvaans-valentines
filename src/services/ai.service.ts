@@ -9,7 +9,9 @@ export class AiService {
   private genAI: GoogleGenAI;
 
   constructor() {
-    this.genAI = new GoogleGenAI({ apiKey: process.env['API_KEY'] });
+    // For Vercel, use environment variable; locally use import.meta.env
+    const apiKey = (import.meta as any).env?.['VITE_GEMINI_API_KEY'] || '';
+    this.genAI = new GoogleGenAI({ apiKey });
   }
 
   async generateLoveNote(partnerName: string): Promise<string> {

@@ -15,7 +15,7 @@ View your app in AI Studio: https://ai.studio/apps/drive/1QkOzIScJFyFwyXEhjPrb8B
 
 1. Install dependencies:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+2. Set the `VITE_GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
 
@@ -23,7 +23,7 @@ View your app in AI Studio: https://ai.studio/apps/drive/1QkOzIScJFyFwyXEhjPrb8B
 
 1. Push your code to a Git repository (GitHub, GitLab, or Bitbucket)
 2. Import your repository in [Vercel](https://vercel.com/new)
-3. Add your `GEMINI_API_KEY` as an environment variable in the Vercel project settings
+3. Add `VITE_GEMINI_API_KEY` as an environment variable in the Vercel project settings
 4. Deploy! Vercel will automatically detect the Angular configuration
 
 Or use the Vercel CLI:
