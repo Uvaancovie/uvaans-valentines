@@ -10,7 +10,7 @@ View your app in AI Studio: https://ai.studio/apps/drive/1QkOzIScJFyFwyXEhjPrb8B
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
+**Prerequisites:**  Node.js v20.19+ or v22.12+
 
 
 1. Install dependencies:
@@ -18,3 +18,21 @@ View your app in AI Studio: https://ai.studio/apps/drive/1QkOzIScJFyFwyXEhjPrb8B
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+
+## Deploy to Vercel
+
+1. Push your code to a Git repository (GitHub, GitLab, or Bitbucket)
+2. Import your repository in [Vercel](https://vercel.com/new)
+3. Add your `GEMINI_API_KEY` as an environment variable in the Vercel project settings
+4. Deploy! Vercel will automatically detect the Angular configuration
+
+Or use the Vercel CLI:
+```bash
+npm i -g vercel
+vercel
+```
+
+The project is configured with:
+- `.nvmrc` file for Node.js v20.19.0
+- `vercel.json` with Angular build settings
+- Automatic routing configuration
